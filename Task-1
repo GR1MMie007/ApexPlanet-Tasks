@@ -1,0 +1,94 @@
+Source Code of Task-1
+
+
+<head>   
+    <title>Task-1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        h1 {
+            color: #ff691e;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        img {
+            width: 200px;
+            border-radius: 8px;
+        }
+        a {
+            color: #00cc1f;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0f78d4;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome aboard to Apex Planet(Task-1)</h1>
+    <p>This is a basic webpage created using HTML. It includes:</p>
+    <ul>
+         <li>An image</li>
+    </ul>
+    <img src="C:\Users\Aryan\Downloads\hq720.jpg" alt="Hewww nawwwwwh ahh dog">
+
+    <p><a href="https://www.youtube.com/watch?v=EcMlX_36gjs" target="_blank">Click here for more memes( Don't Click)</a></p>
+
+    <button onclick="showMessage()">Dont click</button>
+
+    <script>
+        function showMessage() {
+            alert("Hello! You are impatient, consult a doctor!");
+        }
+    </script>
+    
+    <ul>
+        <li>A JavaScript button</li>
+    </ul>
+    <img src="C:\Users\Aryan\Downloads\we-have-no-sappers-dog-accepting-fate.png" alt="Cooked Doggo">
+
+    <p>Wanna see more check out -><a href="https://www.youtube.com/watch?v=EcMlX_36gjs" target="_blank">More Videos</a></p>
+    
+    <button onclick="showMessage()">Dont click</button>
+
+    <script>
+        function showMessage() {
+            alert("Hello! You are impatient, consult a doctor!");
+        }
+    </script>
+    <br>
+    
+    <img src="C:\Users\Aryan\Downloads\176171-1.jpg" alt="Dectective ahh dog">
+
+    <p>Hey! check out more cool stuff -><a href="https://www.youtube.com/watch?v=EcMlX_36gjs" target="_blank">Here</a></p>
+
+    <button onclick="showMessage()">Dont click</button>
+
+    <script>
+        function showMessage() {
+            alert("Hello! You are impatient, consult a doctor!");
+        }
+    </script>
+
+</body>
+</html>
