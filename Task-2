@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audi Service</title>
+
+  
+  <style>
+    
+    @font-face {
+      font-family: "AudiType-WideBold";
+      src: url("AudiType-WideBold_4.03.woff2") format("woff2"),
+           url("AudiType-WideBold_4.03.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    * {
+      font-family: "AudiType-WideBold", Verdana, sans-serif;
+      font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "locl" 1;
+      -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "locl" 1;
+      -moz-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "locl" 1;
+      -ms-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "locl" 1;
+      -o-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "locl" 1;
+    }
+
+    html,body{margin:0;padding:0;height:100%;background:#d9d9d9;}
+    body{display:flex;}
+
+    
+    .sidebar{
+      width:18%;
+      background:#333;
+      color:white;
+      padding:20px;
+      box-sizing:border-box;
+      position:fixed;
+      top:0;left:0;
+      height:100vh;
+      z-index:2;
+      display:flex;
+      flex-direction:column;
+    }
+    .sidebar img{width:100px;height:auto;margin-bottom:40px;}
+    .sidebar ul{list-style:none;padding:0;margin:0;}
+    .sidebar li{padding:10px 0;border-bottom:1px solid #666;}
+    .sidebar a{color:white;text-decoration:none;}
+
+    
+    .content-area{
+      width:82%;
+      margin-left:18%;
+      display:flex;
+    }
+    .left-content{flex:1;}
+    .left-content img{width:100%;height:100vh;object-fit:cover;display:block;}
+    .right-content{
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:0 40px;
+      box-sizing:border-box;
+    }
+
+    
+    .form-section{background:transparent;height:100vh;display:flex;flex-direction:column;justify-content:center;padding:40px 0;box-sizing:border-box;}
+    .form-section h2{color:#1a1a1a;margin-bottom:40px;font-size:28px;font-weight:300;letter-spacing:.5px;}
+    label{display:block;margin:30px 0 8px;color:#666;font-size:14px;font-weight:400;text-transform:uppercase;letter-spacing:1px;}
+    input[type=text],input[type=email],select,textarea{display:block;width:100%;background:transparent;color:#1a1a1a;padding:16px 0;border:none;border-bottom:1px solid #ccc;font-size:16px;outline:none;transition:border-bottom-color .3s;}
+    input:focus,select:focus,textarea:focus{border-bottom-color:#1a1a1a;}
+    input:hover,select:hover,textarea:hover{border-bottom-color:#999;}
+    textarea{min-height:120px;resize:vertical;}
+    button[type=submit]{background:#1a1a1a;color:#fff;border:none;padding:16px 40px;margin-top:40px;font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:1.5px;cursor:pointer;align-self:flex-start;min-width:200px;transition:background .3s;}
+    button[type=submit]:hover{background:#333;}
+    button[type=submit]:active{background:#000;}
+    #formMessage{margin-top:20px;font-size:14px;}
+  </style>
+</head>
+
+<body>
+  
+  <div class="sidebar">
+    <img src="C:\Users\Aryan\Pictures\Screenshots\Screenshot 2025-07-12 015610.png" alt="Logo">
+    <ul>
+      <li>Search</li>
+      <li><a href="#customers">Customers</a></li>
+      <li><a href="https://www.audi.in/en/models/">Model</a></li>
+      <li>Service Type</li>
+    </ul>
+  </div>
+
+  
+  <div class="content-area">
+    <div class="left-content">
+      <img src="C:\Users\Aryan\Downloads\eyJwYXRoIjoidm9sa3N3YWdlblwvZmlsZVwvN2pEZjloSHE3ZnJHajVmMWNUaGkucG5nIn0_volkswagen_NHS7QETq9_Yf1Ky5KyxC1BzxtcWMFu0vri8LbxRMaZ0.png" alt="Audi Service Package">
+    </div>
+
+    <div class="right-content">
+      <div class="form-section">
+        <h2>Contact Form</h2>
+        <form id="contactForm">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="model">Model</label>
+          <select id="model" name="model" required>
+            <option value="">Select Model</option>
+            <option>A3</option><option>A4</option><option>A5</option>
+            <option>A6</option><option>A7</option><option>Q3</option>
+            <option>Q5</option><option>Q7</option><option>Q8</option>
+            <option>e-tron</option>
+          </select>
+
+          <label for="service">Type of Service</label>
+          <select id="service" name="service" required>
+            <option value="">Select Service</option>
+            <option>Regular Maintenance</option>
+            <option>Oil Change</option>
+            <option>Brake Service</option>
+            <option>Tire Replacement</option>
+            <option>Engine Repair</option>
+            <option>AC Service</option>
+          </select>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+        <p id="formMessage"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name    = document.getElementById("name").value.trim();
+      const email   = document.getElementById("email").value.trim();
+      const model   = document.getElementById("model").value;
+      const service = document.getElementById("service").value;
+      const message = document.getElementById("message").value.trim();
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!name || !emailPattern.test(email) || !model || !service || !message) {
+        document.getElementById("formMessage").textContent = "Please fill out all fields correctly.";
+        document.getElementById("formMessage").style.color = "red";
+      } else {
+        document.getElementById("formMessage").textContent = "Form submitted successfully!";
+        document.getElementById("formMessage").style.color = "green";
+        document.getElementById("contactForm").reset();
+      }
+    });
+  </script>
+</body>
+</html>
