@@ -1,0 +1,1328 @@
+html code ------------------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheer Driving Pleasure | Premium Automotive Experience</title>
+    <meta name="description" content="Experience the ultimate in luxury and performance with our premium automotive collection">
+    <link rel="stylesheet" href="css1.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<body>
+   
+    <header class="header">
+        <div class="header-container">
+            
+            <div class="logo">
+                 <img src="C:\Users\Aryan\Pictures\Screenshots\Screenshot 2025-07-21 210902.png" alt="Logo" class="logo-image">
+            </div>
+
+            
+            <nav class="nav">
+                <a href="#" class="nav-link active inter">Home</a>
+                <a href="#" class="nav-link inter">Circular World</a>
+                <a href="#" class="nav-link inter">Digital Journey</a>
+                <a href="#" class="nav-link inter">Electric Future</a>
+                <a href="#" class="nav-link inter">Freude</a>
+                <a href="#" class="nav-link inter">Models</a>
+            </nav>
+
+            
+            <div class="header-actions">
+                <button class="btn btn-ghost">
+                    <i data-lucide="search"></i>
+                </button>
+                <button class="btn btn-ghost md-hidden">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+   
+    <main>
+        
+        <section class="hero">
+            <div class="hero-container">
+                
+                <div class="hero-content">
+                    <p class="hero-tag inter">INSIDE NEUE KLASSE</p>
+                    <h1 class="hero-title roboto">
+                        THE PREMIUM<br>
+                        <span class="bold">PANORAMIC</span><br>
+                        <span class="bold">iDRIVE</span>
+                    </h1>
+                    <p class="hero-description inter">
+                        Experience the future of automotive innovation with our revolutionary 
+                        panoramic display technology that redefines driving pleasure.
+                    </p>
+                    <a href="#" class="btn btn-primary inter">
+                        Read more
+                        <i data-lucide="arrow-right" class="arrow-icon"></i>
+                    </a>
+                </div>
+
+                
+                <div class="hero-image">
+                    <div class="hero-img">
+                        <img src="C:\Users\Aryan\Downloads\new-7-series-exterior-front-view.avif" 
+                             alt="Premium automotive steering wheel with panoramic display">
+                    </div>
+                    <div class="hero-accent"></div>
+                </div>
+            </div>
+        </section>
+        
+  <section class="carousel-section">
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <div class="slide"><img src="C:\Users\Aryan\Downloads\bmw-m-series-seo-overview-ms-04.jpg" alt="Slide 1"/></div>
+        <div class="slide"><img src="C:\Users\Aryan\Downloads\BMW-M5-CS-front-view.jpg" alt="Slide 2"/></div>
+        <div class="slide"><img src="C:\Users\Aryan\Downloads\bmw-css-7-series-protection-ms-new-standard.jpg" alt="Slide 3"/></div>
+        <div class="slide last">
+          <img src="C:\Users\Aryan\Downloads\bmw-css-authority-vehicle-ms-range-7-series.jpg" alt="Slide 4"/>
+          <div class="quiz-overlay">
+            <h2 class="quiz-title roboto">Help us know you better</h2>
+            <form class="quiz-form inter">
+              <div class="question">
+                <p>1. Preferred drive terrain?</p>
+                <label><input type="radio" name="q1" value="City"> City</label>
+                <label><input type="radio" name="q1" value="Highway"> Highway</label>
+              </div>
+              <div class="question">
+                <p>2. Electric or Combustion?</p>
+                <label><input type="radio" name="q2" value="Electric"> Electric</label>
+                <label><input type="radio" name="q2" value="Combustion"> Combustion</label>
+              </div>
+              <div class="question">
+                <p>3. Favorite interior color?</p>
+                <label><input type="radio" name="q3" value="Black"> Black</label>
+                <label><input type="radio" name="q3" value="Cream"> Cream</label>
+                <label><input type="radio" name="q3" value="Red"> Red</label>
+              </div>
+              <div class="question">
+                <p>4. Tech priority?</p>
+                <label><input type="radio" name="q4" value="Infotainment"> Infotainment</label>
+                <label><input type="radio" name="q4" value="Safety"> Safety</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+      </div>
+    </div>
+  </section>
+
+<script>
+  (() => {
+    const track   = document.querySelector('.carousel-track');
+    const slides  = Array.from(track.children);
+    const dots    = document.querySelectorAll('.carousel-dots .dot');
+    const quizBox = document.querySelector('.quiz-overlay');
+    let current   = 0, timer;
+
+    function goTo(idx) {
+      current = (idx + slides.length) % slides.length;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((d,i)=>d.classList.toggle('active', i===current));
+
+      if (current === slides.length - 1) {
+        clearInterval(timer);
+        quizBox.style.display='flex';
+        requestAnimationFrame(()=>quizBox.classList.add('show'));
+      } else {
+        quizBox.classList.remove('show');
+        setTimeout(()=>quizBox.style.display='none',750);
+      }
+    }
+    function start(){
+      quizBox.classList.remove('show');
+      setTimeout(()=>quizBox.style.display='none',750);
+      timer = setInterval(()=>goTo(current+1),2500);
+    }
+    function stop(){clearInterval(timer);}
+
+    start();
+    dots.forEach(d=>d.addEventListener('click',()=>{stop();goTo(+d.dataset.index);}));
+    track.addEventListener('mouseenter',stop);
+    track.addEventListener('mouseleave',()=>{if(current!==slides.length-1)start();});
+    document.querySelector('.quiz-form').addEventListener('submit',e=>{
+      e.preventDefault();alert('Thank you!');start();
+    });
+  })();
+  </script>
+
+        
+        <section class="featured">
+            <div class="featured-container">
+                <div class="featured-card dark">
+                    <div class="featured-card-bg">
+                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Luxury car exterior">
+                    </div>
+                    <div class="featured-card-overlay"></div>
+                    <div class="featured-card-content">
+                        <div>
+                            <span class="featured-card-tag inter">Guide</span>
+                            <h3 class="featured-card-title roboto">
+                                Hidden Features: Discover clever functions in your premium vehicle
+                            </h3>
+                        </div>
+                        <a href="#" class="featured-card-link inter">Learn more →</a>
+                    </div>
+                </div>
+
+                <div class="featured-card accent">
+                    <div class="featured-card-bg">
+                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Luxury car exterior">
+                    </div>
+                    <div class="featured-card-overlay"></div>
+                    <div class="featured-card-content">
+                        <div>
+                            <span class="featured-card-tag inter">Inside Neue Klasse</span>
+                            <h3 class="featured-card-title roboto">
+                                The Heart of Joy – Redefining driving pleasure
+                            </h3>
+                        </div>
+                        <a href="#" class="featured-card-link inter">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="news">
+            <div class="news-container">
+                <div class="news-header">
+                    <h2 class="news-title roboto">Stay up to date with us.</h2>
+                    <a href="#" class="btn btn-outline inter">All news</a>
+                </div>
+
+                <div class="news-grid">
+                    <div class="news-card">
+                        <div class="news-card-image">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                                 alt="Art Basel Basel 2025">
+                        </div>
+                        <div class="news-card-content">
+                            <h3 class="news-card-title roboto">Art Basel Basel 2025</h3>
+                            <p class="news-card-description inter">
+                                Discover the intersection of automotive design and contemporary art
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="news-card">
+                        <div class="news-card-content">
+                            <h3 class="news-card-title roboto">The first Premium fragrances</h3>
+                            <p class="news-card-description inter">
+                                Experience luxury beyond the vehicle with our signature scent collection
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="news-card">
+                        <div class="news-card-content">
+                            <h3 class="news-card-title roboto">Sheer charging pleasure!</h3>
+                            <p class="news-card-description inter">
+                                Revolutionary charging technology for the electric future
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="news-card">
+                        <div class="news-card-content">
+                            <h3 class="news-card-title roboto">Spotify Playlist</h3>
+                            <p class="news-card-description inter">
+                                Curated driving soundtracks for the ultimate journey
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="news-card">
+                        <div class="news-card-content">
+                            <h3 class="news-card-title roboto">Panoramic iDrive</h3>
+                            <p class="news-card-description inter">
+                                Next-generation interface technology
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="news-card">
+                        <div class="news-card-content">
+                            <h3 class="news-card-title roboto">Holiday Season</h3>
+                            <p class="news-card-description inter">
+                                Special edition collections and seasonal offers
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="expert">
+            <div class="expert-container">
+                <div class="expert-grid">
+                    
+                    <div>
+                        <h2 class="expert-title roboto">BECOME A PREMIUM EXPERT</h2>
+                        <a href="#" class="btn btn-primary inter">EXPLAINED</a>
+                    </div>
+
+                    
+                    <div class="podcast-card">
+                        <div class="podcast-header">
+                            <div class="podcast-icon">
+                                <i data-lucide="play"></i>
+                            </div>
+                            <div>
+                                <h3 class="podcast-title roboto">The Premium Podcast</h3>
+                                <p class="podcast-subtitle inter">Changing Lanes</p>
+                            </div>
+                        </div>
+                        
+                        <p class="podcast-description inter">
+                            Changing Lanes is the official podcast from Premium Motors. In these audio series, 
+                            we take you with us on new journeys through the automotive universe. Find out more 
+                            about sustainability, innovation, technology, mobility and the latest trends.
+                        </p>
+                        
+                        <a href="#" class="podcast-link inter">Listen now →</a>
+                    </div>
+                </div>
+
+                
+                <div class="expert-cards">
+                    <div class="expert-card dark">
+                        <span class="expert-card-tag">GAME CHANGER</span>
+                        <h4 class="expert-card-title roboto">
+                            An audio series about those who change the world around them
+                        </h4>
+                    </div>
+                    
+                    <div class="expert-card light">
+                        <span class="expert-card-tag">PREMIUM & SUPERHEROES</span>
+                        <h4 class="expert-card-title roboto">
+                            Freeing Gaia Podcast
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3 class="inter">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="inter">About</a></li>
+                        <li><a href="#" class="inter">Careers</a></li>
+                        <li><a href="#" class="inter">News</a></li>
+                        <li><a href="#" class="inter">Investor Relations</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="inter">Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="inter">Models</a></li>
+                        <li><a href="#" class="inter">Services</a></li>
+                        <li><a href="#" class="inter">Accessories</a></li>
+                        <li><a href="#" class="inter">Technology</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="inter">Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="inter">Contact</a></li>
+                        <li><a href="#" class="inter">Find a Dealer</a></li>
+                        <li><a href="#" class="inter">Owner Support</a></li>
+                        <li><a href="#" class="inter">Recalls</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="inter">Follow</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="inter">Facebook</a></li>
+                        <li><a href="#" class="inter">Twitter</a></li>
+                        <li><a href="#" class="inter">Instagram</a></li>
+                        <li><a href="#" class="inter">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            <div class="newsletter">
+                <h3 class="roboto">Stay Connected</h3>
+                <p class="inter">
+                    Get the latest news and updates from Premium Motors directly to your inbox.
+                </p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" class="newsletter-input inter">
+                    <button class="btn btn-primary inter">Subscribe</button>
+                </div>
+            </div>
+
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <div class="footer-logo"></div>
+                    <span class="inter">© 2024 Premium Motors. All rights reserved.</span>
+                </div>
+                
+                <div class="footer-bottom-right inter">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script>
+        lucide.createIcons();
+        
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+       
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(248, 250, 252, 0.98)';
+            } else {
+                header.style.background = 'rgba(248, 250, 252, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+CSS code ------------------------------>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        
+        :root {
+            --background: hsl(0, 0%, 98%);
+            --foreground: hsl(0, 0%, 10%);
+            --primary: hsl(210, 100%, 45%);
+            --primary-foreground: hsl(0, 0%, 100%);
+            --primary-hover: hsl(210, 100%, 40%);
+            --secondary: hsl(0, 0%, 96%);
+            --secondary-foreground: hsl(0, 0%, 20%);
+            --muted: hsl(0, 0%, 94%);
+            --muted-foreground: hsl(0, 0%, 45%);
+            --border: hsl(0, 0%, 90%);
+            --bmw-blue: hsl(210, 100%, 45%);
+            --bmw-silver: hsl(0, 0%, 85%);
+            --bmw-dark: hsl(0, 0%, 10%);
+            --bmw-light: hsl(0, 0%, 98%);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--foreground);
+            line-height: 1.6;
+        }
+
+        .roboto { font-family: 'Roboto', sans-serif; }
+        .inter { font-family: 'Inter', sans-serif; }
+
+        
+        .header {
+            background: white;
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid hsla(0, 0%, 90%, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 4rem;
+        }
+
+        .logo-image {
+            height: 3.5rem;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .logo-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: linear-gradient(135deg, var(--primary), hsl(210, 100%, 35%));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon::before {
+            content: '';
+            width: 1.5rem;
+            height: 1.5rem;
+            background: var(--primary-foreground);
+            border-radius: 50%;
+            border: 2px solid var(--primary-foreground);
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--foreground);
+        }
+
+        .nav {
+            display: none;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .nav { display: flex; }
+        }
+
+        .nav-link {
+            color: var(--muted-foreground);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link.active {
+            color: var(--foreground);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.25rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--primary-foreground);
+            padding: 1.5rem 2rem;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            box-shadow: 0 10px 40px -10px hsla(0, 0%, 0%, 0.15);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--muted-foreground);
+            padding: 0.5rem;
+        }
+
+        .btn-ghost:hover {
+            background: var(--muted);
+            color: var(--primary);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--foreground);
+            border: 1px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            background: var(--foreground);
+            color: var(--background);
+        }
+
+        
+        .hero {
+            background: linear-gradient(135deg, var(--bmw-light) 0%, var(--secondary) 100%);
+            min-height: 80vh;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+            min-height: 80vh;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .hero-tag {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--muted-foreground);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 300;
+            line-height: 1.1;
+            color: var(--foreground);
+        }
+
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero-title {
+                font-size: 5rem;
+            }
+        }
+
+        .hero-title .bold {
+            font-weight: 500;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: var(--muted-foreground);
+            max-width: 28rem;
+            line-height: 1.7;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-img {
+            aspect-ratio: 4/3;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 30px -4px hsla(0, 0%, 0%, 0.1);
+        }
+
+        .hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-accent {
+            position: absolute;
+            bottom: -1rem;
+            right: -1rem;
+            width: 8rem;
+            height: 8rem;
+            background: linear-gradient(135deg, var(--primary), hsl(210, 100%, 35%));
+            border-radius: 50%;
+            opacity: 0.2;
+            filter: blur(2rem);
+        }
+
+        
+        .featured {
+            padding: 5rem 0;
+            background: var(--background);
+        }
+
+        .featured-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .featured-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .featured-card {
+            position: relative;
+            height: 20rem;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 30px -4px hsla(0, 0%, 0%, 0.1);
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .featured-card:hover {
+            box-shadow: 0 10px 40px -10px hsla(0, 0%, 0%, 0.15);
+        }
+
+        .featured-card.dark {
+            background: var(--bmw-dark);
+            color: var(--primary-foreground);
+        }
+
+        .featured-card.accent {
+            background: linear-gradient(135deg, var(--primary), hsl(210, 100%, 35%));
+            color: var(--primary-foreground);
+        }
+
+        .featured-card-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .featured-card-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+            transition: opacity 0.5s ease;
+        }
+
+        .featured-card:hover .featured-card-bg img {
+            opacity: 0.4;
+        }
+
+        .featured-card-overlay {
+            position: absolute;
+            inset: 0;
+        }
+
+        .featured-card.dark .featured-card-overlay {
+            background: linear-gradient(to right, hsla(0, 0%, 10%, 0.9), hsla(0, 0%, 10%, 0.7));
+        }
+
+        .featured-card.accent .featured-card-overlay {
+            background: linear-gradient(to right, hsla(210, 100%, 45%, 0.9), hsla(210, 100%, 45%, 0.7));
+        }
+
+        .featured-card-content {
+            position: relative;
+            z-index: 10;
+            padding: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .featured-card-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: hsla(0, 0%, 100%, 0.2);
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .featured-card-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.3;
+            margin-top: 1rem;
+        }
+
+        .featured-card-link {
+            color: inherit;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .featured-card-link:hover {
+            opacity: 0.8;
+        }
+
+        
+        .news {
+            padding: 5rem 0;
+            background: hsla(0, 0%, 94%, 0.3);
+        }
+
+        .news-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .news-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .news-title {
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--foreground);
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .news-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .news-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .news-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        .news-card {
+            background: var(--primary-foreground);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 30px -4px hsla(0, 0%, 0%, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .news-card:hover {
+            box-shadow: 0 10px 40px -10px hsla(0, 0%, 0%, 0.15);
+        }
+
+        .news-card-image {
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+
+        .news-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .news-card:hover .news-card-image img {
+            transform: scale(1.05);
+        }
+
+        .news-card-content {
+            padding: 1.5rem;
+        }
+
+        .news-card-title {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--foreground);
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .news-card:hover .news-card-title {
+            color: var(--primary);
+        }
+
+        .news-card-description {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            line-height: 1.7;
+        }
+
+        
+        .expert {
+            padding: 5rem 0;
+            background: var(--background);
+        }
+
+        .expert-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .expert-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        @media (min-width: 1024px) {
+            .expert-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .expert-title {
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--foreground);
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .expert-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        .podcast-card {
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary), hsl(210, 100%, 35%));
+            color: var(--primary-foreground);
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 40px -10px hsla(0, 0%, 0%, 0.15);
+        }
+
+        .podcast-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .podcast-icon {
+            width: 3rem;
+            height: 3rem;
+            background: hsla(0, 0%, 100%, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .podcast-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        .podcast-subtitle {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        .podcast-description {
+            font-size: 0.875rem;
+            line-height: 1.7;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .podcast-link {
+            color: inherit;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .podcast-link:hover {
+            opacity: 0.8;
+        }
+
+        .expert-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .expert-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .expert-card {
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 30px -4px hsla(0, 0%, 0%, 0.1);
+        }
+
+        .expert-card.dark {
+            background: var(--bmw-dark);
+            color: var(--primary-foreground);
+        }
+
+        .expert-card.light {
+            background: var(--muted);
+            color: var(--foreground);
+        }
+
+        .expert-card-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .expert-card.dark .expert-card-tag {
+            background: var(--primary);
+            color: var(--primary-foreground);
+        }
+
+        .expert-card.light .expert-card-tag {
+            background: var(--primary);
+            color: var(--primary-foreground);
+        }
+
+        .expert-card-title {
+            font-size: 1.125rem;
+            font-weight: 500;
+        }
+
+        
+        .footer {
+            background: var(--bmw-dark);
+            color: var(--primary-foreground);
+            padding: 4rem 0;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
+
+        .footer-section h3 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: hsla(0, 0%, 100%, 0.8);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-foreground);
+        }
+
+        .newsletter {
+            border-top: 1px solid hsla(0, 0%, 100%, 0.2);
+            padding-top: 3rem;
+            margin-bottom: 3rem;
+            max-width: 28rem;
+        }
+
+        .newsletter h3 {
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            font-size: 0.875rem;
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 0.5rem 1rem;
+            background: hsla(0, 0%, 100%, 0.1);
+            border: 1px solid hsla(0, 0%, 100%, 0.2);
+            border-radius: 0.25rem;
+            color: var(--primary-foreground);
+            font-size: 0.875rem;
+        }
+
+        .newsletter-input::placeholder {
+            color: hsla(0, 0%, 100%, 0.6);
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            ring: 2px solid var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid hsla(0, 0%, 100%, 0.2);
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        .footer-bottom-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-logo {
+            width: 2rem;
+            height: 2rem;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-logo::before {
+            content: '';
+            width: 1rem;
+            height: 1rem;
+            background: var(--primary-foreground);
+            border-radius: 50%;
+            border: 1px solid var(--primary-foreground);
+        }
+
+        .footer-bottom-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+
+        .footer-bottom-right a {
+            color: inherit;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-bottom-right a:hover {
+            opacity: 1;
+        }
+
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+
+        .hidden { display: none; }
+
+        @media (min-width: 768px) {
+            .md-block { display: block; }
+        }
+
+        
+        .arrow-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover .arrow-icon {
+            transform: translateX(0.25rem);
+        }
+        /* ---------- Carousel Section ---------- */
+        .carousel-section {
+        padding: 4rem 0;
+        background: var(--background);
+        }
+
+        .carousel-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        border-radius: .5rem;
+        max-height: 778px;
+        }
+
+.carousel-track {
+  display: flex;
+  transition: transform .6s cubic-bezier(.4,0,.2,1);
+}
+
+.slide {
+  flex: 0 0 100%;
+  height: 778px;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.slide.last { position: relative; }
+
+.quiz-overlay {
+  position: absolute;
+  inset: 0;
+  background: hsla(0,0%,0%,.75);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.25s ease, visibility 1.25s; 
+  pointer-events: none;
+}
+.quiz-overlay.show {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1.25s ease; 
+  pointer-events: auto;
+}
+
+.quiz-title { font-size: 2rem; margin-bottom: 1.5rem; text-align: center; }
+.question { margin-bottom: 1rem; }
+.question p { font-weight: 600; margin-bottom: .5rem; }
+.question label { display: block; margin: .25rem 0; cursor: pointer; }
+.question input[type="radio"] { margin-right: .5rem; }
+
+.carousel-dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: .5rem;
+}
+.dot {
+  width: .75rem;
+  height: .75rem;
+  border-radius: 50%;
+  background: hsla(0,0%,100%,.4);
+  cursor: pointer;
+  transition: background .3s;
+}
+.dot.active,
+.dot:hover { background: var(--primary); }
